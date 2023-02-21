@@ -9,7 +9,7 @@ import Stocks from '../components/stocks/MyStocks'
 Vue.use(Router);
 
 export default new Router({
-    model: 'history',
+    mode: 'history',
     routes:[
         {
             path: '/',
