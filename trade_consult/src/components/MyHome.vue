@@ -1,5 +1,5 @@
 <template>
-    <h1>Início</h1>
+    <h1>oi</h1>
 </template>
 
 <script lang="ts">

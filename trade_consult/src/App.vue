@@ -1,7 +1,11 @@
 <template>
-  <div>
-    <h1>Oii</h1>
-  </div>
+  <v-app>
+    <v-main>
+      <v-container>
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
