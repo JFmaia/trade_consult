@@ -10,7 +10,7 @@ export default{
     },
     actions:{
         //commits são responsaveis de chamar uma mutation!
-        buyStock({commit }){
+        buyStock({commit}){
             commit()
         },
         initStocks({commit}){
