@@ -8,7 +8,7 @@
         <v-card>
             <v-container fill-height>
                 <v-text-field label="Quantidade" type="number" v-model.number="quantity"/>
-                <v-btn @click="buyStock()" class="green darken-3 white--text" :disabled="quantity <= 0 || !Number.isInteger(quantity)">
+                <v-btn @click="buyStock" class="green darken-3 white--text" :disabled="quantity <= 0 || !Number.isInteger(quantity)">
                     Comprar
                 </v-btn>
             </v-container>
@@ -16,7 +16,7 @@
     </v-flex>
 </template>
 
-<script lang="ts">
+<script>
 export default {
     props:['stock'],
     data(){
