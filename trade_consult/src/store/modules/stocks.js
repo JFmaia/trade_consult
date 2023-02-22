@@ -10,8 +10,8 @@ export default{
     },
     actions:{
         //commits são responsaveis de chamar uma mutation!
-        buyStock({commit}){
-            commit()
+        buyStock({commit},order){
+            commit('buyStock',order);
         },
         initStocks({commit}){
             commit('setStocks',stocks)
