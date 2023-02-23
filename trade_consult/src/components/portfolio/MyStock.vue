@@ -7,9 +7,11 @@
         </v-card>   
         <v-card>
             <v-container fill-height>
-                <v-text-field label="Quantidade" type="number" v-model.number="quantity"/>
-                <v-btn @click="sellStock" class="blue darken-3 white--text" :disabled="quantity <= 0 || !Number.isInteger(quantity)">
-                    Vender
+                <v-text-field label="Quantidade" type="number" v-model.number="quantity" :error="insufficientQuantity || quantity < 0 || !Number.isInteger(quantity)"/>
+                <v-btn @click="sellStock" class="blue darken-3 white--text" 
+                    :disabled="insufficientQuantity || quantity <= 0 || !Number.isInteger(quantity)"
+                >
+                    {{ insufficientQuantity ? "Extrapolação" : "Vender" }}
                 </v-btn>
             </v-container>
         </v-card>
@@ -22,6 +24,11 @@ export default {
     data(){
         return {
             quantity: 0
+        }
+    },
+    computed:{
+        insufficientQuantity(){
+            return this.quantity > this.stock.quantity
         }
     },
     methods:{
